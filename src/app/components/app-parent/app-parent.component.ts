@@ -2,8 +2,8 @@ import { Component, computed, effect, Inject, OnInit, signal } from '@angular/co
 import { MyService} from '../../services/my-service.service';
 import { AppChildComponent } from '../app-child/app-child.component';
 import { LOGGER_TOKEN, MY_HANDLERS } from '../../models';
-import { ConsoleLoggerService } from '../../services/console-logger.service';
 import { UiLoggerService } from '../../services/ui-logger.service';
+import { ConsoleLoggerService } from '../../services/console-logger.service';
 
 
 @Component({
@@ -35,12 +35,8 @@ export class AppParentComponent implements OnInit {
 
   constructor(@Inject(MY_HANDLERS) public handler: string[], 
   @Inject(LOGGER_TOKEN) private logger: ConsoleLoggerService,
-  @Inject(LOGGER_TOKEN) private uiLogger: UiLoggerService
   ) { 
-    console.log(handler);
-    this.logger.log('AppParentComponent logger');
-    this.uiLogger.log('AppParentComponent uiLogger');
-
+    this.logger.log('Hello from ConsoleLoggerService');
     effect(() => { // effect run when message is updated
       if(this.message().length === 3) {
         console.log('Message is 3 characters');

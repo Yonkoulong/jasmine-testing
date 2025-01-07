@@ -6,7 +6,9 @@ describe('UiLoggerService', () => {
   let service: UiLoggerService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [UiLoggerService]
+    });
     service = TestBed.inject(UiLoggerService);
   });
 

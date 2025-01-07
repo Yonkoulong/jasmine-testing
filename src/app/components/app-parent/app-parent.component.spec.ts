@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AppParentComponent } from './app-parent.component';
+import { ConsoleLoggerService } from '../../services/console-logger.service';
+import { LOGGER_TOKEN } from '../../models';
 
 describe('AppParentComponent', () => {
   let component: AppParentComponent;
@@ -8,9 +10,8 @@ describe('AppParentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppParentComponent]
-    })
-    .compileComponents();
+      imports: [AppParentComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AppParentComponent);
     component = fixture.componentInstance;

@@ -6,7 +6,9 @@ describe('ConsoleLoggerService', () => {
   let service: ConsoleLoggerService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [ConsoleLoggerService]
+    });
     service = TestBed.inject(ConsoleLoggerService);
   });
 
